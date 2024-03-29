@@ -12,31 +12,8 @@ export default function Home() {
     setDesc("");
     console.log(mainTask);
   };
-  const deleteHandler = (i) => {
-    let copyTask = [...mainTask];
-    copyTask.splice(i);
-    setMainTask(copyTask);
-  };
-  let renderTask = <h2>No Task Available</h2>;
-  if (mainTask.length > 0) {
-    renderTask = mainTask.map((t, i) => {
-      return (
-        <li key={i} className="flex items-center justify-between mb-8">
-          <div className="flex items-center justify-between  w-2/3">
-            <h5 className="text-2xl font-semibold">{t.title}</h5>
-            <p className=" text-lg font-medium ">{t.desc}</p>
-          </div>
-          <button
-            className=" text-white bg-red-400 px-4 py-2 rounded fond-bold"
-            onClick={() => deleteHandler(i)}
-          >
-            Delete
-          </button>
-        </li>
-      );
-    });
-  }
 
+  // let renderTask = <h2>No Task Available</h2>;
   return (
     <>
       <h1 className="bg-black text-white p-5 text-5xl font-bold text-center">
